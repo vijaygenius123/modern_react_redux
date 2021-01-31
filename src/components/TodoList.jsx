@@ -1,9 +1,13 @@
 import React from 'react'
-import TodoListItem from "./TodoListItem";
 import {connect} from 'react-redux';
+
+import TodoListItem from "./TodoListItem";
+import TodoForm from "./TodoForm";
+
 const TodoList = ({todos = []}) => (
     <div className="list-wrapper">
-        {todos.map(todo => <TodoListItem todo={todo} />)}
+        <TodoForm />
+        {todos.map(todo => <TodoListItem todo={todo} key={todo.id}/>)}
     </div>
 )
 const mapStateToProps = state => ({
